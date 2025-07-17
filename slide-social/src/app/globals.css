@@ -1,78 +1,161 @@
-/* styles/globals.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-body, html {
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
   background: #f8f9fa;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .bg {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f8f9fa;
   position: relative;
+  overflow-x: hidden;
 }
 
 .container {
+  flex: 1;
+  justify-content: center !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center; /* center the letter-card vertically */
   max-width: 700px;
   width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  justify-content: center !important;
+  gap: 1.5rem;
   opacity: 0;
   animation: fadeIn 1.5s ease 1.5s forwards;
   z-index: 2;
+  padding: 1rem;
+  min-height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .letter-card {
   background: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  max-width: 700px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   width: 100%;
+  max-width: 100%;
   text-align: left;
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #333;
   font-family: 'Inter', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .letter-card .logo {
-  margin-bottom: 1.5rem;
-  position: relative;
-  top: 0;
-  left: 0;
-  transform: none;
-  filter: none;
+  margin-bottom: 1rem;
+  display: block;
+  max-width: 100%;
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  box-sizing: border-box;
 }
 
 .letter {
   font-weight: 400;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .signature {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #777;
+}
+
+.social-links a {
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover,
+.social-links a:active {
+  transform: scale(1.1);
 }
 
 @keyframes fadeIn {
   to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0.75rem;
+    min-height: 100vh;
+  }
+
+  .letter-card {
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .letter-card .logo {
+    width: 80px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .letter {
+    font-size: 0.95rem;
+  }
+
+  .signature {
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0.75rem;
+    min-height: 100vh;
+  }
+
+  .letter-card {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .letter-card .logo {
+    width: 70px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .letter {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 }

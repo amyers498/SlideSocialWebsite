@@ -13,7 +13,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg">
+    <div className="bg" style={{ minHeight: '100vh', height: 'auto' }}>
       <div
         className="splash-logo"
         style={{
@@ -37,13 +37,21 @@ export default function Home() {
       </div>
 
       {!showSplash && (
-        <main className="container fade-in">
+        <main
+          className="container fade-in"
+          style={{
+            height: 'auto',
+            maxHeight: '100vh',
+            overflowY: 'auto',
+            width: '100%',
+          }}
+        >
           <div className="letter-card">
             <Image
               src="/logo.png"
               alt="Slide Social Logo"
-              width={160}
-              height={160}
+              width={120}
+              height={120}
               className="logo"
               priority
             />
@@ -74,15 +82,24 @@ export default function Home() {
               <div className="signature">– Team at Slide Social</div>
             </div>
 
-            <div className="social-links" style={{ marginTop: '2rem', display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+            <div
+              className="social-links"
+              style={{
+                marginTop: '2rem',
+                display: 'flex',
+                gap: '1.5rem',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+              }}
+            >
               <a href="https://www.instagram.com/slidesocial1/" target="_blank" rel="noopener noreferrer">
-                <Image src="/instagram.svg" alt="Instagram" width={40} height={40} />
+                <Image src="/instagram.svg" alt="Instagram" width={48} height={48} />
               </a>
               <a href="https://www.linkedin.com/company/slidesocialapp/" target="_blank" rel="noopener noreferrer">
-                <Image src="/linkedin.svg" alt="LinkedIn" width={40} height={40} />
+                <Image src="/linkedin.svg" alt="LinkedIn" width={48} height={48} />
               </a>
               <a href="https://www.tiktok.com/@slidesocial1?_t=ZP-8y5o0eoyM6J&_r=1" target="_blank" rel="noopener noreferrer">
-                <Image src="/tiktok.svg" alt="TikTok" width={40} height={40} />
+                <Image src="/tiktok.svg" alt="TikTok" width={48} height={48} />
               </a>
             </div>
           </div>
@@ -91,4 +108,3 @@ export default function Home() {
     </div>
   );
 }
-//deploy
